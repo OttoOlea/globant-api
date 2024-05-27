@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/v1/globant-api")
 public class GlobantController {
 
-    @GetMapping("")
+    @GetMapping("/")
     public void getAllCharacters() {
 
     }
 
-    @GetMapping("/")
+    @GetMapping("/{id-character}/")
     public void getAllCharactersByID() {
 
     }
 
-    @GetMapping("/{id-character}/")
+    @GetMapping("/history")
     public void getHistoryRegister() {
 
     }
