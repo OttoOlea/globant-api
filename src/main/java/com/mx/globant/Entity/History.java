@@ -15,7 +15,7 @@ public class History {
     @Column(name = "date")
     private String date;
 
-    @Column(name = "details")
+    @Column(name = "detail")
     private String details;
 
     public History() {

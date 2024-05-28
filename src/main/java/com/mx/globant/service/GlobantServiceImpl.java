@@ -1,14 +1,20 @@
 package com.mx.globant.service;
 
+import com.marvel.dto.MarvelResponse;
+import com.marvel.exception.MarvelException;
+import com.marvel.service.MarvelService;
 import com.mx.globant.Entity.History;
 import com.mx.globant.Util.TypeAction;
 import com.mx.globant.repository.HistoryRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GlobantServiceImpl implements GlobantService {
 
@@ -17,15 +23,12 @@ public class GlobantServiceImpl implements GlobantService {
 
     @Autowired
     private HistoryRepository historyRepository;
-    
-    private TestService testService;
 
     @Override
     public ResponseEntity getAllCharacters() {
         try {
             MarvelResponse marvelResponse = marvelService.getAllCharaters();
-
-            saveRegister(TypeAction.CONSULT, "Total registros: " + marvelResponse.getTotal());
+            saveRegister(TypeAction.CONSULT, "Consult all characters: " + marvelResponse.getTotal());
 
             return ResponseEntity
                     .status(HttpStatus.OK)
