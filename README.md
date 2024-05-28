@@ -23,5 +23,14 @@ mvn clean package
 mvn clean install spring-boot:run
 ```
 
+## Important
+When marvel-lib was added as a dependency in globant-api it was showing an import error, for some reason the IDEs did not detect the imports of the new dependency
+
+![Error the import of the dependency](https://github.com/OttoOlea/globant-front-ng/blob/main/src/assets/error_compile_back.png)
+
+![Maven dependency in the Globant-Api](https://github.com/OttoOlea/globant-front-ng/blob/main/src/assets/maven_dependencie_back.png)
+
 ## License
 [Globant](https://www.globant.com)
+
+
